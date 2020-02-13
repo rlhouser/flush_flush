@@ -54,14 +54,14 @@ uint64_t rdtsc_end() {
 
 void maccess(void* p)
 {
-  asm volatile ("movq (%0), %%rax\n"
-    :
-    : "c" (p)
-    : "rax");
+  asm volatile ("movq (%0), %%rax\n" 
+    : //input
+    : "c" (p) //output
+    : "rax"); //clobered registers?
 }
 
 void flush(void* p) {
-    asm volatile ("clflush 0(%0)\n"
+    asm volatile ("clflush 0(%0)\n" //flush the cacheline containing the given address
       :
       : "c" (p)
       : "rax");
