@@ -3,7 +3,7 @@ import numpy
 from matplotlib import pyplot
 import os
 
-attacks = {'ff': 'Flush+flush', 'fr': 'Flush+reload'}
+attacks = {'ff': 'Flush+flush', 'fr': 'Flush+reload', 'pp' : 'Prime and Probe', 'ppc': 'Prime and Probe Covert Channel'}
 
 indirs = ['ff', 'fr', 'pp', 'ppc']
 for indir in indirs:
